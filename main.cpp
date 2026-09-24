@@ -46,4 +46,16 @@ int main( int argc, char * argv[] )
 	cout << loan_amount << " " << yearly_interest_rate << " " << monthly_payment << endl;
 
 	return 0;
+
+	// Beginning of added code for the assignment 2 requirements
+
+	// Check for negatives input values that would be impossible to give a correct output
+	if (loan_amount <= 0 || yearly_interest_rate < 0 || monthly_payment <= 0) 
+	{
+		cout << "Error: Arguments must be positive values." << endl;
+		return -3;
+	}
+
+
+
 }
