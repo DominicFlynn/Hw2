@@ -60,6 +60,10 @@ int main( int argc, char * argv[] )
 
 	//Check in case the the monthly_payment will never be able to pay off the loan amount
 
+	//Actual Execution of Monthly Balance, Interest, and Principle
+
+	//Print of the Amorization Table
+
 	
 
 
