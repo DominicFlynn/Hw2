@@ -1,0 +1,14 @@
+HW 2 Class Work Through
+
+principle = monthly_payment - interest_rate * balance
+
+interest_rate = interest_rate * balance
+
+while (balance > 0)
+    principle = monthly_payment - interest_rate * balance
+                50              - 1.5%          * 1000
+    if (principle > balance) principe = balance
+    
+    interest_rate = interest_rate * balance
+                    1.5%          * 1000
+    balance -= principle
