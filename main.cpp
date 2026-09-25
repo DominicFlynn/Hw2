@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 
 using namespace std;
 
@@ -63,7 +65,7 @@ int main( int argc, char * argv[] )
 	//Actual Execution of Monthly Balance, Interest, and Principle
 
 	//Print of the Amorization Table
-
+	
 	
 
 
