@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -11,6 +11,12 @@ int main( int argc, char * argv[] )
 	if (argc > 4) 
 	{
 		cout << "Too many arguments. Cannot pass in more than three." << endl;
+		return -1;
+	}
+
+	if(argc < 4)
+	{
+		cout << "Too few arguments. Must provide the loan amount, interest, and monthly payment to continue." << endl;
 		return -1;
 	}
 
@@ -47,7 +53,6 @@ int main( int argc, char * argv[] )
 	monthly_payment = arguments[2];
 	cout << loan_amount << " " << yearly_interest_rate << " " << monthly_payment << endl;
 
-	return 0;
 	//****************************************************************************************************************************************** */
 	// Beginning of added code for the HW 2 Assignment requirements
 
@@ -60,11 +65,38 @@ int main( int argc, char * argv[] )
 	//Change our yearly_interest_rate into a decimal amount/percentage per month, a.k.a, our monthly_rate
 	double monthly_rate = (yearly_interest_rate / 100.0) / 12.0;
 
-	//Check in case the the monthly_payment will never be able to pay off the loan amount
+	//TODO: Check in case the the monthly_payment will never be able to pay off the loan amount
+
+	//TODO: Print of the Amorization Table
 
 	//Actual Execution of Monthly Balance, Interest, and Principle
+	double balance = loan_amount;
+	double total_interest_paid = 0.0;
+	int months = 0;
 
-	//Print of the Amorization Table
+	while (balance > 0)
+	{
+		months++;
+		double current_interest = monthly_rate * balance;
+		double principal = monthly_payment - current_interest;
+
+		if (principal > balance)
+		{
+			principal = balance;
+		}
+
+		double actual_payment = principal + current_interest;
+		balance -= principal;
+		total_interest_paid += current_interest;
+
+		if (balance < 0.0001) 
+		{
+			balance = 0.0;
+		}
+
+
+	}
+	
 	
 	
 
