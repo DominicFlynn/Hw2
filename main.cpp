@@ -57,16 +57,29 @@ int main( int argc, char * argv[] )
 		cout << "Error: Arguments must be positive values." << endl;
 		return -3;
 	}
-	//Change our yearly_interest_rate into a decimal amount/percentage per month, a.k.a, our monthly_rate
+	//Check in case the the monthly_payment will never be able to pay off the loan amount
 	double monthly_rate = (yearly_interest_rate / 100.0) / 12.0;
 
-	//Check in case the the monthly_payment will never be able to pay off the loan amount
-
+		if (monthly_payment <= loan_amount * monthly_rate)
+	{
+		cout << "Error: Monthly payment is too small." << endl;
+		return -4;
+	}
+	//Change our yearly_interest_rate into a decimal amount/percentage per month, a.k.a, our monthly_rate
+	double monthly_rate_percent = yearly_interest_rate / 12.0;
 	//Actual Execution of Monthly Balance, Interest, and Principle
+	double balance = loan_amount;
+	double interest = 0.0;
+	double principal = 0.0;
+	double payment = 0.0;
 
+	int month = 0;
 	//Print of the Amorization Table
+cout << "******************************************************" << endl;
+cout << "                 Amortization Table" << endl;
+cout << "******************************************************" << endl;
 	
-	
+cout << "Month\tBalance\t\tPayment\tRate\tInterest\tPrincipal" << endl;
 
 
 }
