@@ -117,5 +117,7 @@ while (balance > 0)
          << "\t\t$" << principal
          << endl;
 }
-
+	cout<< "It takes"<< months<<"months to pay off the loan."<<endl;
+	cout<<"Total interest paid is: $"<<total_interest_paid;
+cout <<"************************************************************" << endl;
 }
