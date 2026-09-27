@@ -76,7 +76,9 @@ if (monthly_payment <= first_month_interest)
 double balance = loan_amount;
 double total_interest_paid = 0.0;
 int months = 0;
-
+cout <<"************************************************************" << endl;
+cout << "\tAmortization Table"<< endl;
+cout <<"************************************************************" << endl;
 cout << "Month\tBalance\t\tPayment\tRate\tInterest\tPrincipal" << endl;
 
 cout << "0\t$"
@@ -107,7 +109,7 @@ while (balance > 0)
     }
 
     cout << months
-         << "\t$" << fixed << setprecision(2) << balance
+		<< "\t$" << fixed << setprecision(2) << balance
          << "\t\t$" << actual_payment
          << "\t" << defaultfloat << yearly_interest_rate / 12.0
          << "\t$" << fixed << setprecision(2) << current_interest
