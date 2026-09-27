@@ -120,5 +120,5 @@ while (balance > 0)
 	
 cout <<"********************************************************************" << endl;
 	cout<< "It takes "<< months<<" months to pay off the loan."<<endl;
-	cout<<"Total interest paid is: $"<<total_interest_paid<<endl;
+	cout<<"Total interest paid is: $"<<total_interest_paid;
 }
