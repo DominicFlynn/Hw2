@@ -65,40 +65,55 @@ int main( int argc, char * argv[] )
 	//Change our yearly_interest_rate into a decimal amount/percentage per month, a.k.a, our monthly_rate
 	double monthly_rate = (yearly_interest_rate / 100.0) / 12.0;
 
-	//TODO: Check in case the the monthly_payment will never be able to pay off the loan amount
+double first_month_interest = loan_amount * monthly_rate;
 
-	//TODO: Print of the Amorization Table
+if (monthly_payment <= first_month_interest)
+{
+    cout << "Error: Monthly payment is too small to pay off the loan." << endl;
+    return -4;
+}
 
-	//Actual Execution of Monthly Balance, Interest, and Principle
-	double balance = loan_amount;
-	double total_interest_paid = 0.0;
-	int months = 0;
+double balance = loan_amount;
+double total_interest_paid = 0.0;
+int months = 0;
 
-	while (balance > 0)
-	{
-		months++;
-		double current_interest = monthly_rate * balance;
-		double principal = monthly_payment - current_interest;
+cout << "Month\tBalance\t\tPayment\tRate\tInterest\tPrincipal" << endl;
 
-		if (principal > balance)
-		{
-			principal = balance;
-		}
+cout << "0\t$"
+     << fixed << setprecision(2) << balance
+     << "\t\tN/A\tN/A\tN/A\t\tN/A"
+     << endl;
 
-		double actual_payment = principal + current_interest;
-		balance -= principal;
-		total_interest_paid += current_interest;
+while (balance > 0)
+{
+    months++;
 
-		if (balance < 0.0001) 
-		{
-			balance = 0.0;
-		}
+    double current_interest = monthly_rate * balance;
+    double principal = monthly_payment - current_interest;
 
+    if (principal > balance)
+    {
+        principal = balance;
+    }
 
-	}
-	
-	
-	
+    double actual_payment = principal + current_interest;
 
+    balance -= principal;
+    total_interest_paid += current_interest;
 
+    if (balance < 0.0001)
+    {
+        balance = 0.0;
+    }
+
+    cout << months
+         << "\t$" << fixed << setprecision(2) << balance
+         << "\t\t$" << actual_payment
+         << "\t" << defaultfloat << yearly_interest_rate / 12.0
+         << "\t$" << fixed << setprecision(2) << current_interest
+         << "\t\t$" << principal
+         << endl;
+}
+
+return 0;
 }
