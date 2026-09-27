@@ -51,7 +51,7 @@ int main( int argc, char * argv[] )
 	loan_amount = arguments[0];
 	yearly_interest_rate = arguments[1];
 	monthly_payment = arguments[2];
-	cout << loan_amount << " " << yearly_interest_rate << " " << monthly_payment << endl;
+	
 
 	//****************************************************************************************************************************************** */
 	// Beginning of added code for the HW 2 Assignment requirements
