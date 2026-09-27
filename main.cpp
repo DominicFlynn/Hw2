@@ -76,9 +76,9 @@ if (monthly_payment <= first_month_interest)
 double balance = loan_amount;
 double total_interest_paid = 0.0;
 int months = 0;
-cout <<"************************************************************" << endl;
+cout <<"********************************************************************" << endl;
 cout << "\tAmortization Table"<< endl;
-cout <<"************************************************************" << endl;
+cout <<"********************************************************************" << endl;
 	
 cout << "Month\tBalance\t\tPayment\tRate\tInterest\tPrincipal" << endl;
 
@@ -118,7 +118,7 @@ while (balance > 0)
          << endl;
 }
 	
-cout <<"************************************************************" << endl;
-	cout<< "It takes"<< months<<"months to pay off the loan."<<endl;
+cout <<"********************************************************************" << endl;
+	cout<< "It takes "<< months<<" months to pay off the loan."<<endl;
 	cout<<"Total interest paid is: $"<<total_interest_paid<<endl;
 }
