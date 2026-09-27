@@ -79,6 +79,7 @@ int months = 0;
 cout <<"************************************************************" << endl;
 cout << "\tAmortization Table"<< endl;
 cout <<"************************************************************" << endl;
+	
 cout << "Month\tBalance\t\tPayment\tRate\tInterest\tPrincipal" << endl;
 
 cout << "0\t$"
@@ -117,5 +118,4 @@ while (balance > 0)
          << endl;
 }
 
-return 0;
 }
